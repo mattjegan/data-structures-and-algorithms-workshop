@@ -1,4 +1,4 @@
-class FifoStack:
+class LifoStack:
     def __init__(self):
         pass
 
