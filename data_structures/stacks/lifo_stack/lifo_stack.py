@@ -1,6 +1,6 @@
 class LifoStack:
     def __init__(self):
-        pass
+        self.data = []
 
     def push(self, item):
         pass
