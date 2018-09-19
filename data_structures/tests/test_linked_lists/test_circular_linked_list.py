@@ -1,0 +1,6 @@
+from unittest import TestCase
+from data_structures.linked_lists.circular_linked_list.circular_linked_list import CircularLinkedList
+from data_structures.solutions.linked_lists.circular_linked_list.circular_linked_list import CircularLinkedList as CircularLinkedListSolution
+
+class TestCircularLinkedList(TestCase):
+    pass
