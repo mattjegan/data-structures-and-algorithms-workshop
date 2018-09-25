@@ -23,7 +23,7 @@ class HashTable:
             return
         
         # There was a collision, let's double hash
-        # TOD
+        # TODO
     
     def delete_value(self, key):
         self.data[HashTable._hash(key)] = None
