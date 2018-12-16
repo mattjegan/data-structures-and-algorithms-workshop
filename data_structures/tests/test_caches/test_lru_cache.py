@@ -16,9 +16,28 @@ class TestLRUCache(TestCase):
         self._test_get_value(LRUCache)
 
     def _test_set_value(self, LRUCacheKlass):
-        lru_cache = LRUCacheKlass()
-        # TODO
+        # Test basic deletion
+        lru_cache = LRUCacheKlass(2)
+        lru_cache.set_value('A', 123)
+        lru_cache.set_value('B', 456)
+        lru_cache.set_value('C', 789)
+
+        assert len(lru_cache) == 2
+        assert lru_cache.get_value('A') is None
+        assert lru_cache.get_value('B') is 456
+        assert lru_cache.get_value('C') is 789
 
     def _test_get_value(self, LRUCacheKlass):
-        hash_table = LRUCacheKlass()
-        # TODO
+        # Test updates least recently accessed
+        lru_cache = LRUCacheKlass(2)
+        lru_cache.set_value('A', 123)
+        lru_cache.set_value('B', 456)
+
+        assert len(lru_cache) == 2
+        assert lru_cache.get_value('A') is 123
+
+        lru_cache.set_value('C', 789)
+        assert len(lru_cache) == 2
+        assert lru_cache.get_value('B') is None
+        assert lru_cache.get_value('A') is 123
+        assert lru_cache.get_value('C') is 789

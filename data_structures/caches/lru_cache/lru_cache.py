@@ -1,3 +1,11 @@
+from datetime import datetime
+
+class Value:
+    def __init__(self, value):
+        self.value = value
+        self.accessed = datetime.now()
+
+
 class LRUCache:
     def __init__(self, limit):
         self.limit = limit
